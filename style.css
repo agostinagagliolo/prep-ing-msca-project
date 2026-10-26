@@ -31,15 +31,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Soft, blurred meshwork behind every page */
+/* Faint meshwork behind every page */
 body::before {
   content: "";
   position: fixed;
   inset: -2rem;
   z-index: -1;
   background: url("images/mesh-bg.svg") center / cover no-repeat;
-  filter: blur(6px);
-  opacity: 0.85;
+  opacity: 0.5;
   pointer-events: none;
 }
 
