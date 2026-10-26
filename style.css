@@ -1,0 +1,350 @@
+/* PrEP-ing at the end of HIV/AIDS — shared styles */
+
+:root {
+  --navy: #1f3a5f;
+  --navy-deep: #172d4a;
+  --teal: #2a7f7a;
+  --teal-soft: #e1f0ee;
+  --amber: #8f5a0f;
+  --amber-soft: #fcefd4;
+  --amber-bright: #f2c14e;
+  --ink: #1c2430;
+  --muted: #5d6b7c;
+  --line: #d5e0de;
+  --bg: #f2f7f6;
+  --paper: #ffffff;
+  --measure: 40rem;
+  --wrap: 64rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  color: var(--navy);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.25rem; margin: 0 0 1.5rem; }
+h2 { font-size: 1.5rem; margin: 3.5rem 0 1.25rem; }
+h3 { font-size: 1.2rem; margin: 0 0 0.5rem; line-height: 1.3; }
+
+p { margin: 0 0 1rem; }
+
+a {
+  color: var(--teal);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover { color: var(--navy); }
+
+a:focus-visible {
+  outline: 2px solid var(--amber-bright);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+em { font-style: italic; }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  background: linear-gradient(115deg, var(--navy-deep) 0%, var(--navy) 40%, #1f5462 75%, var(--teal) 100%);
+  color: #fff;
+}
+
+.site-header .inner {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 2.75rem 1.5rem 0;
+}
+
+.site-name {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.site-name:hover { color: #fff; }
+
+.site-tagline {
+  margin: 0.35rem 0 2rem;
+  max-width: 34rem;
+  color: #cbdbe6;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2rem;
+}
+
+.site-nav a {
+  color: #d9e6ef;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.4rem 0 0.85rem;
+  border-bottom: 3px solid transparent;
+}
+
+.site-nav a:hover { color: #fff; }
+
+.site-nav a[aria-current="page"] {
+  color: #fff;
+  border-bottom-color: var(--amber-bright);
+}
+
+/* ---------- Main ---------- */
+
+main {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 5rem;
+}
+
+main > h1:first-child,
+main > section:first-child > h2:first-child { margin-top: 0; }
+
+.lead {
+  max-width: 46rem;
+  font-size: 1.5rem;
+  line-height: 1.45;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+}
+
+.prose { max-width: var(--measure); }
+
+.note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.text-link { font-weight: 600; }
+
+/* ---------- Entries (news, publications, activities) ---------- */
+
+.entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 0 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.entry-when {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding-top: 0.15rem;
+}
+
+.entry-body { max-width: var(--measure); }
+
+.entry-body > :last-child { margin-bottom: 0; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.1rem 0.65rem;
+  border-radius: 999px;
+  background: var(--teal-soft);
+  color: var(--teal);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.tag-event {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+
+.details {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.flyers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.flyers img {
+  display: block;
+  width: 11rem;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+}
+
+.video {
+  width: 100%;
+  max-width: var(--measure);
+  aspect-ratio: 16 / 9;
+  margin: 1.25rem 0;
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 6px;
+}
+
+/* Publications */
+
+.pub { margin: 0 0 1.5rem; }
+.pub:last-child { margin-bottom: 0; }
+
+.pub-authors { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+.pub-title {
+  margin: 0.15rem 0 0.2rem;
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.pub-source { margin: 0 0 0.5rem; font-size: 0.95rem; }
+
+.pub .tags { margin: 0; }
+
+.pub-link { overflow-wrap: anywhere; }
+
+/* ---------- About ---------- */
+
+.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1.5rem;
+  margin: 1.5rem 0;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  max-width: var(--measure);
+}
+
+.facts dt { color: var(--muted); font-size: 0.95rem; }
+.facts dd { margin: 0; font-weight: 500; }
+
+.person {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 0 2rem;
+  align-items: start;
+}
+
+.person img {
+  width: 9.5rem;
+  height: 9.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.person-body { max-width: var(--measure); }
+
+.person-name { font-size: 1.2rem; margin: 0 0 0.25rem; }
+
+.person-role { color: var(--muted); margin: 0 0 1rem; }
+
+.profiles {
+  display: flex;
+  gap: 1.25rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 600;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--navy-deep);
+  color: #cbdbe6;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.site-footer .inner {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 2.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.eu-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.eu-lockup img { height: 2.6rem; width: auto; display: block; }
+
+.site-footer p { margin: 0; max-width: 38rem; }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 720px) {
+  body { font-size: 1rem; }
+  h1 { font-size: 1.85rem; }
+  .site-header .inner { padding-top: 2rem; }
+  .site-name { font-size: 1.6rem; }
+  .site-nav { gap: 0 1.25rem; }
+  main { padding: 2.5rem 1.25rem 4rem; }
+  .lead { font-size: 1.25rem; }
+  .entry, .person { grid-template-columns: 1fr; }
+  .entry-when { padding: 0 0 0.4rem; }
+  .person img { width: 7.5rem; height: 7.5rem; margin-bottom: 1rem; }
+  .flyers img { width: 9rem; }
+  .site-footer .inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}
