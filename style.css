@@ -31,6 +31,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Soft, blurred meshwork behind every page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -2rem;
+  z-index: -1;
+  background: url("images/mesh-bg.svg") center / cover no-repeat;
+  filter: blur(6px);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
 h1, h2, h3 {
   color: var(--navy);
   font-weight: 700;
@@ -177,40 +189,11 @@ main > section:first-child > h2:first-child { margin-top: 0; }
 }
 
 .entry-when {
-  position: relative;
   color: var(--muted);
   font-size: 0.95rem;
   font-weight: 500;
-  padding: 0.15rem 0 0 1.75rem;
+  padding-top: 0.15rem;
 }
-
-/* Thread: a line runs down the date rail, with a knot at each entry */
-.entries { position: relative; }
-
-.entries::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0.42rem;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--teal-soft), #b9dcd7 20%, #b9dcd7 80%, var(--teal-soft));
-}
-
-.entry-when::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.4rem;
-  width: 0.95rem;
-  height: 0.95rem;
-  border-radius: 50%;
-  background: var(--teal);
-  box-shadow: 0 0 0 4px var(--bg);
-}
-
-.entry:has(.tag-event) .entry-when::before { background: var(--amber-bright); }
-.entry:nth-child(3n+2):not(:has(.tag-event)) .entry-when::before { background: var(--navy); }
 
 .entry-body { max-width: var(--measure); }
 
@@ -402,8 +385,7 @@ main > section:first-child > h2:first-child { margin-top: 0; }
   main { padding: 2.5rem 1.25rem 4rem; }
   .lead { font-size: 1.25rem; }
   .entry, .person { grid-template-columns: 1fr; }
-  .entry-when { padding: 0 0 0.5rem 1.75rem; }
-  .entry-body { padding-left: 1.75rem; }
+  .entry-when { padding: 0 0 0.4rem; }
   .person img { width: 7.5rem; height: 7.5rem; margin-bottom: 1rem; }
   .flyers img { width: 9rem; }
   .site-footer .inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
