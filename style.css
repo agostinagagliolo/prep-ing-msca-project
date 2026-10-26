@@ -27,7 +27,7 @@ body {
   font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--ink);
-  background: var(--bg);
+  background: var(--bg) url("images/mesh-bg.svg") center / cover fixed no-repeat;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -63,9 +63,23 @@ em { font-style: italic; }
 /* ---------- Header ---------- */
 
 .site-header {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(115deg, var(--navy-deep) 0%, var(--navy) 40%, #1f5462 75%, var(--teal) 100%);
   color: #fff;
 }
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 42%;
+  background: url("images/mesh-header.svg") right center / cover no-repeat;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 35%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 35%);
+  pointer-events: none;
+}
+
+.site-header .inner { position: relative; }
 
 .site-header .inner {
   max-width: var(--wrap);
@@ -338,6 +352,7 @@ main > section:first-child > h2:first-child { margin-top: 0; }
   body { font-size: 1rem; }
   h1 { font-size: 1.85rem; }
   .site-header .inner { padding-top: 2rem; }
+  .site-header::before { inset: 0; opacity: 0.55; }
   .site-name { font-size: 1.6rem; }
   .site-nav { gap: 0 1.25rem; }
   main { padding: 2.5rem 1.25rem 4rem; }
